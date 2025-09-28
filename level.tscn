@@ -1,12 +1,12 @@
 [gd_scene load_steps=4 format=3 uid="uid://cd8tub1e5m3rs"]
 
 [ext_resource type="Texture2D" uid="uid://bebprmemjiaa4" path="res://icon.svg" id="1_vonw3"]
-[ext_resource type="PackedScene" uid="uid://clk54oyg06y52" path="res://Player/player.tscn" id="2_oi3di"]
+[ext_resource type="PackedScene" uid="uid://3taxtkur5cl1" path="res://Enemies/enemy.tscn" id="3_oi3di"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_vonw3"]
-vertices = PackedVector2Array(1140.9297, 625.0078, -855.96094, 628.97656, -852.03125, -555, 1133.0703, -555)
+vertices = PackedVector2Array(1941.9609, 1131.9609, -975.3281, 1123.0234, -1063.6719, -1463.5313, 1933.0313, -1623.4375)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-862, -565, -866, 639, 1151, 635, 1143, -565)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-1074, -1473, -985, 1133, 1952, 1142, 1943, -1634)])
 
 [node name="Level" type="Node2D"]
 
@@ -15,9 +15,8 @@ position = Vector2(0.5, 0.5)
 scale = Vector2(12.6328125, 7.8671875)
 texture = ExtResource("1_vonw3")
 
-[node name="Player" parent="." instance=ExtResource("2_oi3di")]
-position = Vector2(0.5, 0.5)
-Speed = 150
-
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_vonw3")
+
+[node name="Enemy" parent="." instance=ExtResource("3_oi3di")]
+position = Vector2(489, -126)

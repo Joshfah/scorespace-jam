@@ -21,11 +21,11 @@ public partial class Player : CharacterBody2D
     public override void _PhysicsProcess(double delta)
     {
         base._PhysicsProcess(delta);
-
+        getInput();
     }
 
     private void die() {
-        GD.Print("died");
+        QueueFree();
     }
 
     public void getInput()
