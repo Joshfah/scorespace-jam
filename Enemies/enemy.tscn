@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://3taxtkur5cl1"]
+
+[ext_resource type="PackedScene" uid="uid://h865n6liyxfh" path="res://Templates/hurtbox.tscn" id="1_3ih25"]
+
+[node name="Enemy" type="CharacterBody2D"]
+collision_layer = 2
+
+[node name="Hurtbox" parent="." instance=ExtResource("1_3ih25")]
