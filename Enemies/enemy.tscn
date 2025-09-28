@@ -26,4 +26,3 @@ shape = SubResource("RectangleShape2D_rt1x0")
 
 [node name="EnemyHitbox" parent="." instance=ExtResource("4_rt1x0")]
 script = ExtResource("5_8wvsg")
-Damage = 5

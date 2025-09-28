@@ -26,7 +26,7 @@ public partial class EnemyHitbox : Area2D
 
     public void onAreaEntered(Area2D area) 
     {
-        if(area is Hurtbox hurtbox && area.GetParent().HasMethod("Player"))
+        if(area is Hurtbox hurtbox && area.GetParent().HasMethod("isPlayer"))
         {
             PlayerHurtbox = hurtbox;
             SetProcess(true);
@@ -35,7 +35,7 @@ public partial class EnemyHitbox : Area2D
 
     public void onAreaExited(Area2D area)
     {
-        if(area is Hurtbox && area.GetParent().HasMethod("Player"))
+        if(area is Hurtbox && area.GetParent().HasMethod("isPlayer"))
         {
             PlayerHurtbox = null;
             SetProcess(false);

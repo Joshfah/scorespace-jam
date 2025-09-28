@@ -135,6 +135,7 @@ script = ExtResource("5_vtle1")
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_4ntmi")
+Speed = 120
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_n471f")
