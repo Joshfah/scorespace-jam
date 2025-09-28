@@ -22,7 +22,6 @@ public partial class Player : CharacterBody2D
         getInput();
 
         GD.Print(GlobalPosition);
-
     }
 
 	public void die() {
@@ -35,8 +34,8 @@ public partial class Player : CharacterBody2D
 	{
 		Vector2 InputDir = Input.GetVector("a", "d", "w", "s");
 
-		Velocity = InputDir.Normalized() * Speed;
+        GD.Print("Inputdir: ", InputDir);
 
-		MoveAndSlide();
+        Velocity = InputDir.Normalized() * Speed;
 	}
 }
