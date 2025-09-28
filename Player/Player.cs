@@ -1,18 +1,21 @@
 using Godot;
 using System;
 
+[GlobalClass]
 public partial class Player : CharacterBody2D
 {
-
     private Hurtbox _hurtbox;
 
     [Export]
     public int Speed { get; set; }
+
+
     public override void _Ready()
     {
         base._Ready();
 
         _hurtbox = GetNode<Hurtbox>("hurtbox");
+        _hurtbox.Die += die;
     }
 
     public override void _PhysicsProcess(double delta)
@@ -21,7 +24,7 @@ public partial class Player : CharacterBody2D
 
     }
 
-    public void die() {
+    private void die() {
         GD.Print("died");
     }
 
