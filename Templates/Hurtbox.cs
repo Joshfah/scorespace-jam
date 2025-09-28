@@ -7,7 +7,6 @@ public partial class Hurtbox : Area2D
     [Signal]
     public delegate void DieEventHandler();
 
-
     [Export]
     private int _hp;
 
@@ -21,7 +20,26 @@ public partial class Hurtbox : Area2D
         }
     }
 
-    public void emitDie() 
+    public override void _Ready()
+    {
+        base._Ready();
+
+        SetProcess(false);
+    }
+
+    public override void _Process(double delta)
+    {
+        base._Process(delta);
+
+        
+    }
+
+    public void getDamage(int Damage) 
+    {
+        HP -= Damage;
+    }
+
+    public void emitDie()
     {
         EmitSignal("die");
     }
