@@ -11,13 +11,20 @@ config_version=5
 [application]
 
 config/name="scorespace-jam"
+run/main_scene="uid://cd8tub1e5m3rs"
 config/features=PackedStringArray("4.5", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
-Player="*res://Player/player.tscn"
+Player="res://Player/player.tscn"
+
+[display]
+
+window/size/viewport_width=340
+window/size/viewport_height=180
+window/stretch/mode="canvas_items"
 
 [dotnet]
 

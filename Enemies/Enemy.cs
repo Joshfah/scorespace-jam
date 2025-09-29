@@ -24,7 +24,7 @@ public partial class Enemy : CharacterBody2D
     private EnemyHitbox _hitbox;
     private NavigationAgent2D _navAgent;
     private Area2D _detectionRange;
-    public Player Player;
+    //public Player PlayerRef;
 
     public override void _Ready()
     {
@@ -43,7 +43,7 @@ public partial class Enemy : CharacterBody2D
     public override async void _Process(double delta)
     {
         base._Process(delta);
-
+/* 
         Random rnd = new Random();
 
         switch(CurState)
@@ -76,7 +76,7 @@ public partial class Enemy : CharacterBody2D
         }
 
         Velocity = _navAgent.GetNextPathPosition().Normalized() * speed;
-        MoveAndSlide();
+        MoveAndSlide(); */
     }
 
     private void onNavigationAgent2dTargetReached()
@@ -101,7 +101,7 @@ public partial class Enemy : CharacterBody2D
         if(area.Name == "DetectedRange")
         {
             CurState = State.CHASE;
-            Player = area.GetParent<Player>();
+            //PlayerRef = area.GetParent<Player>();
         }
     }
 

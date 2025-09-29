@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://clk54oyg06y52"]
+[gd_scene load_steps=9 format=3 uid="uid://clk54oyg06y52"]
 
 [ext_resource type="Script" uid="uid://dcjmj0rythfpa" path="res://Player/Player.cs" id="1_4ntmi"]
 [ext_resource type="Texture2D" uid="uid://bebprmemjiaa4" path="res://icon.svg" id="2_btcbx"]
@@ -6,9 +6,6 @@
 [ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="4_fhl08"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="5_vtle1"]
 [ext_resource type="PackedScene" uid="uid://h865n6liyxfh" path="res://Templates/hurtbox.tscn" id="6_fhl08"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gwnis"]
-size = Vector2(123, 119)
 
 [sub_resource type="Resource" id="Resource_od3ui"]
 script = ExtResource("5_vtle1")
@@ -22,10 +19,6 @@ Speed = 120
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_btcbx")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.5, -0.5)
-shape = SubResource("RectangleShape2D_gwnis")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 physics_interpolation_mode = 1
@@ -51,10 +44,12 @@ inactive_update_mode = 1
 follow_offset = Vector2(0.5, 0.5)
 follow_damping_value = Vector2(0.05, 0.05)
 
-[node name="Hurtbox" parent="." instance=ExtResource("6_fhl08")]
-_hp = 100
-
 [node name="DetectedRange" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectedRange"]
 shape = SubResource("CircleShape2D_vtle1")
+
+[node name="Hurtbox" parent="." instance=ExtResource("6_fhl08")]
+scale = Vector2(10, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
