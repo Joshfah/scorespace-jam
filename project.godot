@@ -24,6 +24,7 @@ Player="*res://Player/player.tscn"
 
 window/size/viewport_width=340
 window/size/viewport_height=180
+window/size/mode=4
 window/stretch/mode="canvas_items"
 
 [dotnet]
@@ -60,3 +61,7 @@ d={
 [physics]
 
 common/physics_interpolation=true
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
