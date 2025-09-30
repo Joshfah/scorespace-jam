@@ -1,6 +1,7 @@
 using Godot;
 using System;
 
+[GlobalClass]
 public partial class Player : CharacterBody2D
 {
 
@@ -13,15 +14,14 @@ public partial class Player : CharacterBody2D
 		base._Ready();
 
 		_hurtbox = GetNode<Hurtbox>("hurtbox");
-	}
+    }
 
 	public override void _PhysicsProcess(double delta)
 	{
 		base._PhysicsProcess(delta);
 
         getInput();
-
-        GD.Print(GlobalPosition);
+        MoveAndSlide();
     }
 
 	public void die() {
